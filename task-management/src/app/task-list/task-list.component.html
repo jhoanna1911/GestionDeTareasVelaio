@@ -1,0 +1,8 @@
+<div class="filter-buttons">
+  <button mat-button (click)="setFilter('all')">All</button>
+  <button mat-button (click)="setFilter('completed')">Completed</button>
+  <button mat-button (click)="setFilter('pending')">Pending</button>
+</div>
+<div *ngFor="let task of tasks$ | async">
+  <app-task [task]="task" (toggle)="toggleTaskCompletion(task.id)" (delete)="deleteTask(task.id)"></app-task>
+</div>

@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-checkbox [checked]="task?.completed" (change)="onToggle()">
+    <span [ngClass]="{ 'completed': task?.completed }">{{ task?.title }}</span>
+  </mat-checkbox>
+  <button mat-icon-button color="warn" (click)="onDelete()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
